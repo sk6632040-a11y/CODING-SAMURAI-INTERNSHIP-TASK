@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      width: 90%;
+      max-width: 650px;
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+      font-size: 26px;
+    }
+
+    .form-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .form-group div {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #4facfe;
+      box-shadow: 0 0 5px rgba(79,172,254,0.5);
+    }
+
+    .gender-options {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      margin-top: 5px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .buttons input {
+      flex: 1;
+      margin: 0 5px;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    
+    
+    {
+    	background-image:/images (4).jpeg;
+    }
+
+    .buttons .submit {
+      background: #4facfe;
+      color: white;
+    }
+
+    .buttons .submit:hover {
+      background: #0084ff;
+    }
+
+    .buttons .reset {
+      background: #ff5c5c;
+      color: white;
+    }
+
+    .buttons .reset:hover {
+      background: #e64444;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .form-group {
+        flex-direction: column;
+      }
+      .buttons {
+        flex-direction: column;
+      }
+      .buttons input {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Registration Form</h2>
+    <form>
+      <!-- Name -->
+      <div class="form-group">
+        <div>
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="fname" placeholder="Enter first name" required>
+        </div>
+        <div>
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lname" placeholder="Enter last name" required>
+        </div>
+      </div>
+
+      <!-- Email & Phone -->
+      <div class="form-group">
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" required>
+        </div>
+      </div>
+
+      <!-- DOB & Gender -->
+      <div class="form-group">
+        <div>
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+        <div>
+          <label>Gender</label>
+          <div class="gender-options">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+        </div>
+      </div>
+      <!-- Course & Year -->
+      <div class="form-group">
+        <div>
+          <label for="course">Select Course</label>
+          <select id="course" name="course" required>
+            <option value="">--Select--</option>
+            <option value="BCA">BCA</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="B.Com">B.Com</option>
+            <option value="BA">BA</option>
+            <option value="MBA">MBA</option>
+          </select>
+        </div>
+        <div>
+          <label for="year">Year of Admission</label>
+          <select id="year" name="year" required>
+            <option value="">--Select--</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="3" placeholder="Enter your address"></textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <input type="submit" value="Register" class="submit">
+        <input type="reset" value="Clear" class="reset">
+      </div>
+    </form>
+
+    <!-- Footer -->
+    <div class="footer">
+      ✨ Form designed by <b>Sachin</b>
+    </div>
+  </div>
+</body>
+</html>
