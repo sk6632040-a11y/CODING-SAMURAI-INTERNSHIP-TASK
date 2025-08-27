@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Modern Website</title>
+  <meta name="description" content="A clean, responsive one‑page website template you can customize." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1226;
+      --card: #151936;
+      --text: #e7e9ff;
+      --muted: #b8bcff;
+      --accent: #7c5cff;
+      --accent-2: #12d2d2;
+      --ring: rgba(124, 92, 255, .4);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 80% -20%, rgba(124, 92, 255, .15), transparent 60%),
+                  radial-gradient(1000px 900px at -10% 20%, rgba(18, 210, 210, .12), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }/* ======= Header / Nav ======= */
+.container { width: min(1100px, 92vw); margin: 0 auto; }
+header {
+  position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(1.2) blur(10px);
+  background: linear-gradient(to bottom, rgba(15,18,38,.9), rgba(15,18,38,.6));
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .5px; }
+.logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: var(--shadow); }
+.nav a { color: var(--muted); text-decoration: none; margin-left: 22px; font-weight: 600; }
+.nav a:hover { color: var(--text); }
+.menu-btn { display: none; background: none; border: none; color: var(--text); font-size: 1.4rem; }
+
+@media (max-width: 820px) {
+  .links { display: none; }
+  .menu-btn { display: block; }
+}
+
+/* Mobile drawer */
+.drawer { position: fixed; inset: 0 0 0 auto; width: 78%; max-width: 360px; background: #0f1226; transform: translateX(100%);
+  transition: transform .35s ease; box-shadow: -10px 0 30px rgba(0,0,0,.5); padding: 18px; }
+.drawer.open { transform: translateX(0); }
+.drawer a { display: block; padding: 14px 10px; color: var(--muted); text-decoration: none; border-radius: 12px; }
+.drawer a:hover { background: rgba(255,255,255,.05); color: var(--text); }
+
+/* ======= Hero ======= */
+.hero { padding: 76px 0 40px; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: center; }
+.eyebrow { color: var(--accent-2); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .85rem; }
+h1 { font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.08; margin: 10px 0 16px; }
+.lead { font-size: clamp(1rem, 1.6vw, 1.2rem); color: var(--muted); }
+.cta { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; border: 1px solid transparent; font-weight: 700; text-decoration: none; }
+.btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #0b0f22; }
+.btn.ghost { color: var(--text); border-color: rgba(255,255,255,.18); }
+
+.mock { position: relative; aspect-ratio: 4/3; background: linear-gradient(180deg, #14183a, #0e112b);
+  border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.mock::before, .mock::after { content: ""; position: absolute; border-radius: 50%; filter: blur(40px); opacity: .5; }
+.mock::before { width: 240px; height: 240px; background: var(--accent); top: -60px; right: -40px; }
+.mock::after  { width: 300px; height: 300px; background: var(--accent-2); bottom: -100px; left: -60px; }
+.mock-inner { position: absolute; inset: 18px; border-radius: 14px; background: conic-gradient(from 110deg at 60% 40%, rgba(255,255,255,.06), transparent 40%);
+  border: 1px solid rgba(255,255,255,.06); display: grid; place-items: center; text-align: center; color: var(--muted); font-weight: 600; }
+
+@media (max-width: 980px) {
+  .hero-grid { grid-template-columns: 1fr; }
+}
+
+/* ======= Sections ======= */
+section { padding: 70px 0; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 14px; }
+.sub { color: var(--muted); margin-bottom: 26px; }
+
+/* Cards grid */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
+.card {
+  background: linear-gradient(180deg, #14183a, #0e112b);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover { transform: translateY(-4px); border-color: rgba(124, 92, 255, .35); box-shadow: 0 16px 40px rgba(0,0,0,.55); }
+.card h3 { margin: 6px 0 6px; }
+.pill { display: inline-block; padding: 6px 10px; font-size: .8rem; border-radius: 999px; border: 1px solid rgba(255,255,255,.18); color: var(--muted); }
+
+/* About */
+.about { display: grid; grid-template-columns: 1.1fr 1fr; gap: 22px; align-items: center; }
+.about p { color: var(--muted); }
+.about .card { height: 100%; display: grid; place-items: center; text-align: center; font-weight: 600; }
+@media (max-width: 900px) { .about { grid-template-columns: 1fr; } }
+
+/* Contact */
+form { display: grid; gap: 12px; }
+label { font-size: .9rem; color: var(--muted); }
+input, textarea {
+  width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.03); color: var(--text);
+  outline: none; box-shadow: none; transition: border-color .2s ease, box-shadow .2s ease;
+}
+input:focus, textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 6px var(--ring); }
+textarea { min-height: 120px; resize: vertical; }
+
+/* Footer */
+footer { padding: 24px 0 40px; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); }
+.foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.social { display: flex; gap: 12px; }
+.social a { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; border: 1px solid rgba(255,255,255,.18); text-decoration: none; color: var(--text); }
+.social a:hover { background: rgba(255,255,255,.06); }
+
+/* Utility */
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+  </style>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>MySite</span>
+      </div>
+      <nav class="links" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-btn" aria-expanded="false" aria-controls="drawer" aria-label="Open menu">☰</button>
+    </div>
+  </header>  <!-- Mobile Drawer -->  <aside id="drawer" class="drawer" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="#home" onclick="closeDrawer()">Home</a>
+      <a href="#services" onclick="closeDrawer()">Services</a>
+      <a href="#about" onclick="closeDrawer()">About</a>
+      <a href="#projects" onclick="closeDrawer()">Projects</a>
+      <a href="#contact" onclick="closeDrawer()">Contact</a>
+    </nav>
+  </aside>  <!-- ===== Hero ===== -->  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Welcome</div>
+        <h1>Build something beautiful — fast.</h1>
+        <p class="lead">This responsive one‑page template gives you a polished starting point for a portfolio, agency, or product. Tweak the colors, text, and cards to make it yours.</p>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Get in touch</a>
+          <a class="btn ghost" href="#projects">See projects</a>
+        </div>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="mock-inner">Add a screenshot or illustration here</div>
+      </div>
+    </div>
+  </section>  <!-- ===== Services ===== -->  <section id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <p class="sub">Pick a few offerings or features you provide. Keep each card short and action-oriented.</p>
+      <div class="grid">
+        <article class="card">
+          <span class="pill">Design</span>
+          <h3>UI/UX & Prototyping</h3>
+          <p>Create elegant interfaces with attention to accessibility, motion, and detail.</p>
+        </article>
+        <article class="card">
+          <span class="pill">Development</span>
+          <h3>Web Apps & Sites</h3>
+          <p>Fast, responsive, SEO‑friendly builds with modern tooling.</p>
+        </article>
+        <article class="card">
+          <span class="pill">Optimization</span>
+          <h3>Performance & SEO</h3>
+          <p>Improve Core Web Vitals, accessibility scores, and conversions.</p>
+        </article>
+      </div>
+    </div>
+  </section>  <!-- ===== About ===== -->  <section id="about">
+    <div class="container about">
+      <div>
+        <h2>About Me</h2>
+        <p class="sub">Write a short intro. Share your mission, your approach, or what makes you different.</p>
+        <p>I craft delightful digital experiences. My focus is clean code, scalable systems, and user‑first design. I enjoy collaborating with teams to ship products that matter.</p>
+        <p><strong>Tools:</strong> HTML, CSS, JavaScript, React, Node.js</p>
+      </div>
+      <div class="card">Add a headshot or logo</div>
+    </div>
+  </section>  <!-- ===== Projects ===== -->  <section id="projects">
+    <div class="container">
+      <h2>Selected Projects</h2>
+      <p class="sub">Showcase real work, case studies, or screenshots. Link each card to a demo or repo.</p>
+      <div class="grid">
+        <a class="card" href="#" aria-label="Project One">
+          <h3>Project One</h3>
+          <p>Brief summary of what you built and the impact it had.</p>
+        </a>
+        <a class="card" href="#" aria-label="Project Two">
+          <h3>Project Two</h3>
+          <p>Brief summary of what you built and the impact it had.</p>
+        </a>
+        <a class="card" href="#" aria-label="Project Three">
+          <h3>Project Three</h3>
+          <p>Brief summary of what you built and the impact it had.</p>
+        </a>
+      </div>
+    </div>
+  </section>  <!-- ===== Contact ===== -->  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="sub">This form uses mailto: by default. Replace with your backend/API later.</p>
+      <form action="mailto:you@example.com" method="post" enctype="text/plain" onsubmit="thankYou(event)">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="How can I help?" required></textarea>
+        </div>
+        <button class="btn primary" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>  <footer>
+    <div class="container foot">
+      <small>© <span id="year"></span> Your Name. All rights reserved.</small>
+      <div class="social" aria-label="Social links">
+        <a href="#" aria-label="Twitter">T</a>
+        <a href="#" aria-label="GitHub">G</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+  </footer>  <script>
+    // Mobile drawer toggle
+    const btn = document.querySelector('.menu-btn');
+    const drawer = document.getElementById('drawer');
+    function toggleDrawer() {
+      const open = drawer.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      drawer.setAttribute('aria-hidden', !open);
+    }
+    function closeDrawer(){ drawer.classList.remove('open'); btn.setAttribute('aria-expanded', false); drawer.setAttribute('aria-hidden', true); }
+    btn.addEventListener('click', toggleDrawer);
+
+    // Smooth close drawer after clicking a link (handled inline via onclick)
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Fake submit handler
+    function thankYou(e){
+      e.preventDefault();
+      alert('Thanks! Your message was captured (demo). Replace the form action with your backend.');
+    }
+  </script></body>
+</html>
