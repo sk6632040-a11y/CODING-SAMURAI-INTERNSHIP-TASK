@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin Kumar - Web Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 3s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 0.15em solid #667eea;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #667eea }
+        }
+        
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-gray-100">
+    <!-- Navigation -->
+    <nav class="glass-effect fixed w-full z-50 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text">
+                AC
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-purple-300 transition-colors">Home</a>
+                <a href="#about" class="hover:text-purple-300 transition-colors">About</a>
+                <a href="#skills" class="hover:text-purple-300 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-purple-300 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-purple-300 transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-6 py-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="glass-effect rounded-2xl p-12 backdrop-blur-lg">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 gradient-text">
+                    Alex Carter
+                </h1>
+                <h2 class="text-2xl md:text-3xl mb-8 typewriter">
+                    Full-Stack Web Developer
+                </h2>
+                <p class="text-xl mb-10 text-gray-200">
+                    Crafting digital experiences that blend creativity with functionality
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+                        View My Work
+                    </button>
+                    <button class="glass-effect hover:bg-white/20 px-8 py-3 rounded-full font-semibold transition-colors">
+                        Download CV
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="aspect-square rounded-2xl overflow-hidden">
+                        <img src="/1838282_applicant_Photo.jpg">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Hello! I'm sachin </h3>
+                    <p class="text-lg mb-6 text-gray-200">
+                        I'm a passionate full-stack developer with 5+ years of experience creating web applications that solve real-world problems. I specialize in React, Node.js, and modern web technologies.
+                    </p>
+                    <p class="text-lg mb-8 text-gray-200">
+                        When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or hiking in the mountains for inspiration.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-effect p-4 rounded-xl text-center">
+                            <div class="text-2xl font-bold text-purple-300">50+</div>
+                            <div class="text-sm">Projects Completed</div>
+                        </div>
+                        <div class="glass-effect p-4 rounded-xl text-center">
+                            <div class="text-2xl font-bold text-purple-300">3+</div>
+                            <div class="text-sm">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 bg-black/20">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">My Skills</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Technical Skills -->
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6">Technical Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>HTML/CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-600 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full skill-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>JavaScript/TypeScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-600 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full skill-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>React.js</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="w-full bg-gray-600 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full skill-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Node.js</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-600 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full skill-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="glass-effect rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6">Tools & Technologies</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center space-x-3 p-3 glass-effect rounded-lg">
+                            <i class="fab fa-react text-blue-400 text-2xl"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 glass-effect rounded-lg">
+                            <i class="fab fa-node-js text-green-400 text-2xl"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 glass-effect rounded-lg">
+                            <i class="fab fa-python text-yellow-400 text-2xl"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 glass-effect rounded-lg">
+                            <i class="fab fa-git-alt text-orange-400 text-2xl"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 glass-effect rounded-lg">
+                            <i class="fab fa-docker text-blue-300 text-2xl"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 glass-effect rounded-lg">
+                            <i class="fab fa-aws text-orange-300 text-2xl"></i>
+                            <span>AWS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="glass-effect rounded-2xl overflow-hidden card-hover">
+                    <div class="aspect-video">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e7891710-1842-4ca7-8be1-962e198f81e9.png" alt="E-commerce dashboard interface showing sales analytics and product management" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">E-Commerce Platform</h3>
+                        <p class="text-gray-200 mb-4">Full-stack e-commerce solution with React, Node.js, and MongoDB</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600/30 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-purple-600/30 px-3 py-1 rounded-full text-sm">Node.js</span>
+                            <span class="bg-purple-600/30 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        </div>
+                        <button class="w-full glass-effect py-2 rounded-lg hover:bg-white/20 transition-colors">
+                            View Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-effect rounded-2xl overflow-hidden card-hover">
+                    <div class="aspect-video">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4b65277f-fa30-4152-867d-dec09e827f28.png" alt="Task management application interface with kanban board and calendar view" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Task Management App</h3>
+                        <p class="text-gray-200 mb-4">Collaborative project management tool with real-time updates</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600/30 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                            <span class="bg-purple-600/30 px-3 py-1 rounded-full text-sm">Firebase</span>
+                            <span class="bg-purple-600/30 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                        </div>
+                        <button class="w-full glass-effect py-2 rounded-lg hover:bg-white/20 transition-colors">
+                            View Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-effect rounded-2xl overflow-hidden card-hover">
+                    <div class="aspect-video">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4ec7b6ec-06be-4361-9f8a-cc5de1a61b97.png" alt="Weather application interface showing current conditions and 7-day forecast" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3">Weather Dashboard</h3>
+                        <p class="text-gray-200 mb-4">Real-time weather application with beautiful data visualization</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600/30 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-purple-600/30 px-3 py-1 rounded-full text-sm">Chart.js</span>
+                            <span class="bg-purple-600/30 px-3 py-1 rounded-full text-sm">API</span>
+                        </div>
+                        <button class="w-full glass-effect py-2 rounded-lg hover:bg-white/20 transition-colors">
+                            View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-black/20">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Get In Touch</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Let's work together!</h3>
+                    <p class="text-lg text-gray-200 mb-8">
+                        I'm always interested in new opportunities and exciting projects. Feel free to reach out if you'd like to collaborate!
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Email</div>
+                                <div class="text-gray-200">alex@example.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Phone</div>
+                                <div class="text-gray-200">+1 (555) 123-4567</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Location</div>
+                                <div class="text-gray-200">San Francisco, CA</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-effect rounded-2xl p-8">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block mb-2 font-semibold">Name</label>
+                            <input type="text" class="w-full glass-effect border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block mb-2 font-semibold">Email</label>
+                            <input type="email" class="w-full glass-effect border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Your email">
+                        </div>
+                        <div>
+                            <label class="block mb-2 font-semibold">Message</label>
+                            <textarea rows="5" class="w-full glass-effect border border-white/20 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-effect py-12 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 transition-colors">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center hover:bg-purple-700 tran
